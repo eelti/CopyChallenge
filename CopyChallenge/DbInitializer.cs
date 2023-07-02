@@ -18,7 +18,10 @@ namespace CopyChallenge
             var players = new List<Player>(){
                 new Player() {
                     FirstName = "Eric",
-                    LastName = "Leduc"
+                    LastName = "Leduc",
+                    Week1 = 1,
+                    Week2 = 1,
+                    Week3 = 3
                 },
                 new Player()
                 {

@@ -17,23 +17,23 @@
     .RemoteOperations(true)
     .Columns(columns => {
 
-        columns.AddFor(m => m.FirstName);
+                            columns.AddFor(m => m.FirstName);
 
-        columns.AddFor(m => m.LastName);
+                            columns.AddFor(m => m.LastName);
 
-        columns.AddFor(m => m.Week1);
+                            columns.AddFor(m => m.Week1);
 
-        columns.AddFor(m => m.Week2);
+                            columns.AddFor(m => m.Week2);
 
-        columns.AddFor(m => m.Week3);
+                            columns.AddFor(m => m.Week3);
 
-        columns.AddFor(m => m.Week4);
+                            columns.AddFor(m => m.Week4);
 
-        columns.AddFor(m => m.Week5);
+                            columns.AddFor(m => m.Week5);
     })
     .Editing(e => e
         .AllowAdding(true)
         .AllowUpdating(true)
         .AllowDeleting(true)
-    )
-)
+        .Mode(GridEditMode.Batch)
+    ))
