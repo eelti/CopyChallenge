@@ -59,6 +59,7 @@
 
     <script src="~/js/devextreme/aspnet/dx.aspnet.mvc.js"></script>
     <script src="~/js/devextreme/aspnet/dx.aspnet.data.js"></script>
+    @RenderSection("styles", required: false)
 </head>
 
 <body style="padding-top: 5rem;">
@@ -75,6 +76,7 @@
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item"><a asp-area="" asp-controller="Home" asp-action="Index" class="nav-link">Order</a></li>
                     <li class="nav-item"><a asp-area="" asp-controller="Home" asp-action="Player" class="nav-link">Player</a></li>
+                    <li class="nav-item"><a asp-area="" asp-controller="Home" asp-action="Customer" class="nav-link">Customer</a></li>
                     <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
                     <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>

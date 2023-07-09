@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopyChallenge", "CopyChallenge\CopyChallenge.csproj", "{74324070-687C-4C74-AC38-2EEDCB031BFC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CopyChallenge", "CopyChallenge\CopyChallenge.csproj", "{74324070-687C-4C74-AC38-2EEDCB031BFC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DevExtreme NuGet.config", "DevExtreme NuGet.config", "{0779BE26-92BA-4988-84A1-A1221FB46C65}"
 	ProjectSection(SolutionItems) = preProject
