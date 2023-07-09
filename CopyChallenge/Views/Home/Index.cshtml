@@ -1,7 +1,27 @@
 @using CopyChallenge.Models
 
 <h2>Home</h2>
+<script src="~/js/storage.js"></script>
+<script>
+    function condition(e){
+        return e.rowType ==  'data'
+    }
+    var copymode = false
+    const colorcopy = '#6495ED', colorpaste = '#FF7F50', selectioncolor = '#708090';
+    function click(e){
+        if(condition(e)){
+            copymode = !copymode;
+            console.log(e); e.cellElement.css('background-color', (copymode)? colorcopy : colorpaste)
+        }
+        
+    }
+    function doubleclick(e) {
+        if (condition(e)) {
+            console.log(e); e.cellElement.css('background-color', selectioncolor)
+        }
+    }
 
+</script>
 @(
 Html.DevExtreme().DataGrid<SampleOrder>()
     .ShowBorders(true)
@@ -19,6 +39,8 @@ Html.DevExtreme().DataGrid<SampleOrder>()
         columns.AddFor(m => m.ShipCountry);
         columns.AddFor(m => m.ShipCity);
     })
+    .OnCellClick(@"click")
+    .OnCellDblClick(@"doubleclick")
     .Paging(p => p.PageSize(10))
     .FilterRow(f => f.Visible(true))
     .HeaderFilter(f => f.Visible(true))
@@ -32,12 +54,25 @@ Html.DevExtreme().DataGrid<SampleOrder>()
         .GroupItems(groupItems => {
             groupItems.Add().SummaryType(SummaryType.Count);
         })
-    )
+    )/*
     .Editing(e =>
     {
         e.AllowAdding(true);
         e.AllowUpdating(true);
         e.AllowDeleting(true);
         e.Mode(GridEditMode.Batch);
-    })
+    })*/
 )
+
+<script>
+    var datab = {
+        OrderID: 1020,
+        OrderDate: "1996-07-05T00:00:00",
+        CustomerName: "Anais Trujillo",
+        CustomerId:null,
+        ShipCountry: "Mexico",
+        ShipCity: "Mexico City"
+    };
+    /*
+    */
+</script>
