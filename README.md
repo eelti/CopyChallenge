@@ -14,6 +14,44 @@ Features:
   - Copy 1 cell to many cell/row(s)
   - Copy many cells from one row
   - Copy many cells from many rows
+ 
+For the function to clone a row see this exemple I just implement:
+```
+        columns.Add()
+            .Type(GridCommandColumnType.Buttons)
+            .Width(110)
+            .Buttons(b => {
+                              b.Add().Name(GridColumnButtonName.Edit);
+                              b.Add().Name(GridColumnButtonName.Delete);
+                              b.Add()
+                                  .Hint("Clone")
+                                  .Icon("copy")
+                                  /*.Visible(new JS("isCloneIconVisible"))
+                                  .Disabled(new JS("isCloneIconDisabled"))*/
+                                  .OnClick("onCloneIconClick");
+            });
+    })
+    .Editing(e => e
+        .AllowAdding(true)
+        .AllowUpdating(true)
+        .AllowDeleting(true)
+    .UseIcons(true)
+    )
+)
+
+<script>
+    function onCloneIconClick(e) {
+        var clonedItem = $.extend({}, e.row.data);
+        var clonedItem = $.extend({}, e.row.data, { Project_FTE_Mapping_BD_ActivityDesc_ID: null });
+        var dataGrid = $("#Mapping_BD_ActivityDesc").dxDataGrid({
+        }).dxDataGrid("instance");
+        var dataSource = dataGrid.getDataSource();
+        dataSource.store().insert(clonedItem).then(function () {
+            dataSource.reload();
+        });
+
+    }
+```
 
 https://supportcenter.devexpress.com/ticket/details/t1085435/datagrid-for-devextreme-how-to-allow-users-select-multiple-cells
 
